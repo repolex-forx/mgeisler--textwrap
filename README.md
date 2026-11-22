@@ -1,1 +1,151 @@
-Initializing
+# Repolex Knowledge Graph of mgeisler/textwrap
+
+RDF knowledge graph data for [mgeisler/textwrap](https://github.com/mgeisler/textwrap), parsed by [repolex](https://repolex.ai).
+
+> **Note**: This data is experimental and subject to change without notice.
+
+## How to use this data
+
+The easiest way to get started is to install the [rlex](https://github.com/repolex-ai/rlex) query tool:
+
+```bash
+cargo install --git https://github.com/repolex-ai/rlex
+```
+
+Verify the install:
+
+```bash
+rlex --help
+```
+
+**rlex is designed to be used primarily by LLMs in a terminal.** Start up your favorite AI assistant and ask it to use rlex. It handles the SPARQL — you just ask questions in plain English.
+
+To load this repo's data:
+
+```bash
+rlex download mgeisler/textwrap
+```
+
+Consult `rlex --help` for other options, including SPARQL queries, HTTP server, and interactive visualization.
+
+## Data structure
+
+All data is stored as gzip-compressed [N-Quads](https://www.w3.org/TR/n-quads/) (`.nq.gz`), a standard RDF format that can be loaded into any triplestore or graph database.
+
+```
+.
+├── aggregate
+│   ├── ast
+│   │   └── 4770e55af425a0cffb9ad8496599d2a1a4f5ed14
+│   │       └── chunk-001.nq.gz
+│   ├── lsp
+│   │   └── 4770e55af425a0cffb9ad8496599d2a1a4f5ed14.nq.gz
+│   └── repolex
+│       └── 4770e55af425a0cffb9ad8496599d2a1a4f5ed14
+│           └── chunk-001.nq.gz
+├── blob
+│   ├── 02bff9cd110dbf0b63cbc0c7a15c5435da48e37f.nq.gz
+│   ├── 0438ce847a114d04873df496d2d480d60650625e.nq.gz
+│   ├── 0514fe5fc0dfde74f726236982fa3a7f55dced52.nq.gz
+│   ├── 0d37ec3891d8607a1b3f809f08ea12c2b8b1fd33.nq.gz
+│   ├── 0d561999239112ddbfe07f4c856619a244ed0afa.nq.gz
+│   ├── 162cde192c1441893a3c688ae287a01919ae8210.nq.gz
+│   ├── 16dfa9ddab3ad406106ae41d92ec3444f800adbb.nq.gz
+│   ├── 19b8c5e77980c6852be58ab0c73fe8b79c1a072b.nq.gz
+│   ├── 1be85f04eb39b7e1273fea8d824d5783a4bbab40.nq.gz
+│   ├── 27bdd8d34a034dde7c6963eb374bc145134b9304.nq.gz
+│   ├── 29c80dcc85e242c9abfc7ea213376ce9f1b31cae.nq.gz
+│   ├── 29e598b581aaba8d98ee251041955279b9343e9a.nq.gz
+│   ├── 2ed441cdbd98805b0aee6fad922e35f065eca7f3.nq.gz
+│   ├── 2f3a853b3cfd9da7c6a9bed6cea2854145fc6bc1.nq.gz
+│   ├── 307e97cce19b5174d676c0fc02f9b5d8ad5bdd36.nq.gz
+│   ├── 34d977146812541dd5fe460cf3f1e84c8a138ab9.nq.gz
+│   ├── 3aa9960cccd737daaddd6d4d84c24b63216ecdd8.nq.gz
+│   ├── 3f429b187adb42d5524687a63e068724a2cccc63.nq.gz
+│   ├── 459ce0ad13c6316b92883623e34ee7b17ae97d7c.nq.gz
+│   ├── 498d3a91ef4f24f602d3e0d0d4da55d29db5638f.nq.gz
+│   ├── 4f232a935321fce5d6bc98e16765e869d953cb98.nq.gz
+│   ├── 55f76430b4e0506eb0f49a9890faaa7d37ecd991.nq.gz
+│   ├── 5972f5a45e28183b26d73e85412a10af2d7e8ccb.nq.gz
+│   ├── 5c66191b771ee83d32d0a89ffdae1a1b4908055e.nq.gz
+│   ├── 6243c2a1e8ac01648a7a53fb7ac2c33cd6383577.nq.gz
+│   ├── 6774d13e801625fb907f70d5358694d0970954b9.nq.gz
+│   ├── 6a2b102b8e25268d1cdd76bafd789fb1b7c19d96.nq.gz
+│   ├── 7141683d4c322cd3c763683d28cb01a528078103.nq.gz
+│   ├── 76ca6195312c605f5ff4c17c953ec73144b28637.nq.gz
+│   ├── 7853fa23112bb4082c492d24e909537ee2bc2e93.nq.gz
+│   ├── 78bc631d0b006a929d28c9f8fa2384e447ea714a.nq.gz
+│   ├── 7cfcf0e9047c457a6a58c1263d24c32d92c08489.nq.gz
+│   ├── 7f09d39a8078b4399cf55b3f66c307f1289696f4.nq.gz
+│   ├── 80a74605f6e0e793797b125e724a3a10680a9fb6.nq.gz
+│   ├── 829cbd48bd35cc29815e463a68e21b43e827fcdb.nq.gz
+│   ├── 85105f609cad90b9725105f5220f444e073b74de.nq.gz
+│   ├── 908b832d5e6b97189018fb801d789097462e9fe7.nq.gz
+│   ├── 9aa24ba814d671ebb33cd90374c135bac8237f14.nq.gz
+│   ├── 9dd5ad2642d48a2b05a9291dc25e4fa874ed4ca7.nq.gz
+│   ├── 9e771b2d7d8be909609beb727ade1a107a4695de.nq.gz
+│   ├── a7f2ccf29846895b91a8c2048657e6c3b09c6817.nq.gz
+│   ├── acc65b535914ff4dbb05c36a4ba0bc84b1a1c822.nq.gz
+│   ├── ad0b49b762bab59ca9559feb0e6dfd93d9133502.nq.gz
+│   ├── adab283154915b5d643a901dd84b6838ef335c45.nq.gz
+│   ├── b7ad4812a2f8a6f40b81476acd16940e8b122dff.nq.gz
+│   ├── ba650ee69167d2d6ae0939531db3f99c05cde8f1.nq.gz
+│   ├── bc23406897b668e705d7d8130538ea926e9b08bd.nq.gz
+│   ├── bc7136ee57bf34a743dcf33552a9e038c5938c9f.nq.gz
+│   ├── bdc0334539eeb1071e1ed51ac88355467a9e1360.nq.gz
+│   ├── c1578aafbcf29f99a94e5afda9efef04c9bb3618.nq.gz
+│   ├── c2eeac4697382450d9907d40e758ae729ff151e5.nq.gz
+│   ├── c3e5877682e24ed4d5e8daf0fae4c75aa816ed44.nq.gz
+│   ├── c9ab1ae1d773695a05e4653bd41f200cffee4763.nq.gz
+│   ├── cdffc22cb1ada68a4c32f5da70065178abf51dbb.nq.gz
+│   ├── d13a0a1a7949afcf99c9f864f675894cbaf1b1ca.nq.gz
+│   ├── d14d5588fa26eab5b01f8402e85ab28f21d90e68.nq.gz
+│   ├── d9feb5e3bcd3615adb2e3a823513f38ec56b4a0f.nq.gz
+│   ├── dfc2811a600b6e05432e974f03443130b7940cab.nq.gz
+│   ├── e2622f3661033df4322e3dbb1b8e69e8f9c1a4ac.nq.gz
+│   ├── e49b1f451e731ca4287e273d0b7b42425571dc28.nq.gz
+│   ├── f068a0cfe4682b11f501ac6d2235e738a884c9f6.nq.gz
+│   ├── f3453687d052c342137c0396268cfee78204369f.nq.gz
+│   ├── f3623b04a62325953b7e491402edd73d3b246e0e.nq.gz
+│   ├── f4a8de7dbc4aeefadd36a7b0a5e13ce933ad950b.nq.gz
+│   ├── f5ee3e879ba61202b945f48aa6bf451ef5715767.nq.gz
+│   ├── fbbbd349c2a58c0f7e00c18b3006b8c785ba6349.nq.gz
+│   ├── fbcaab9e210b61186d4753377571659cd4028dbc.nq.gz
+│   └── fe202914cd0184c35c8906dee4a6152f9dd9f000.nq.gz
+├── branch
+│   └── branch.nq.gz
+├── commit
+│   └── commit.nq.gz
+├── dep
+│   └── 4770e55af425a0cffb9ad8496599d2a1a4f5ed14.nq.gz
+├── filetree
+│   └── 4770e55af425a0cffb9ad8496599d2a1a4f5ed14.nq.gz
+├── issue
+│   └── issue.nq.gz
+├── pr
+│   └── pr.nq.gz
+└── tag
+    └── tag.nq.gz
+
+15 directories, 78 files
+```
+
+| Directory | What it contains |
+|-----------|-----------------|
+| `blob/` | Per-file AST graphs, content-addressed by git blob SHA. Each file in the source repo gets its own graph. |
+| `aggregate/ast/` | Combined AST graph per parsed commit. Merges all blob graphs for a snapshot of the entire codebase at that point. |
+| `aggregate/lsp/` | Language Server Protocol enrichment: resolved symbols, definitions, references, and type information. |
+| `aggregate/dataflow/` | Interprocedural data flow edges between functions and modules. |
+| `aggregate/repolex/` | Combined graph (AST + LSP + dataflow) per commit. |
+| `commit/` | Git commit metadata (author, date, message, parent links). |
+| `branch/` | Branch metadata. |
+| `tag/` | Tag metadata. |
+| `filetree/` | File tree snapshots per commit (which files existed and their blob SHAs). |
+| `audit/` | Code architecture and graph audit reports per commit. |
+
+## Source repository
+
+[mgeisler/textwrap](https://github.com/mgeisler/textwrap)
+
+---
+*Parsed on 2026-11-22 by [repolex](https://repolex.ai)*
